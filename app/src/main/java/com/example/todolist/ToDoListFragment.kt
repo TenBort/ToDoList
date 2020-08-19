@@ -17,14 +17,14 @@ class ToDoListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_to_do_list, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
         val fragmentAdapter = MyPagerAdapter(parentFragmentManager)
         viewpager.adapter = fragmentAdapter
         tabs.setupWithViewPager(viewpager)
-
     }
-
-
 }
