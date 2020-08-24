@@ -1,13 +1,12 @@
-package com.example.todolist
+package com.example.todolist.Fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
-import androidx.viewpager.widget.ViewPager
-import com.google.android.material.tabs.TabLayout
+import com.example.todolist.Adapters.MyPagerAdapter
+import com.example.todolist.R
 import kotlinx.android.synthetic.main.fragment_to_do_list.*
 
 
@@ -17,13 +16,17 @@ class ToDoListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_to_do_list, container, false)
+                return inflater.inflate(R.layout.fragment_to_do_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        val fragmentAdapter = MyPagerAdapter(parentFragmentManager)
+        val fragmentAdapter =
+            MyPagerAdapter(
+                parentFragmentManager,
+                2
+            )
         viewpager.adapter = fragmentAdapter
         tabs.setupWithViewPager(viewpager)
     }
