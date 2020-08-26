@@ -24,7 +24,7 @@ class ToDoListFragment : Fragment() {
 
         val fragmentAdapter =
             MyPagerAdapter(
-                parentFragmentManager,
+                childFragmentManager,
                 2
             )
         viewpager.adapter = fragmentAdapter
