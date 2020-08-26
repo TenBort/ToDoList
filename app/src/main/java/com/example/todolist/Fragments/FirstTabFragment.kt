@@ -6,22 +6,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.todolist.Adapters.RecyclerAdapter
+import com.example.todolist.Adapters.ToDoRecyclerAdapter
 import com.example.todolist.R
-import kotlinx.android.synthetic.main.fragment_second_tab.*
+import kotlinx.android.synthetic.main.fragment_first_tab.*
 
-class FirstTabFragment : Fragment() {
+class FirstTabFragment : Fragment()
+{
+    val adapterRecycler = ToDoRecyclerAdapter()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_first_tab, container, false)
-
 
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
 
+        RecyclerViewFirst.layoutManager = LinearLayoutManager(context)
+        RecyclerViewFirst.adapter = adapterRecycler
+    }
 }
