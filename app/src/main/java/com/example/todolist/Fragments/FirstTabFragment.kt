@@ -18,8 +18,6 @@ class FirstTabFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_first_tab, container, false)
-
-
     }
 
 

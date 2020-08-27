@@ -17,7 +17,6 @@ class StartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_start, container, false)
-
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
