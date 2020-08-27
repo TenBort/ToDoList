@@ -16,7 +16,7 @@ class ToDoListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-                return inflater.inflate(R.layout.fragment_to_do_list, container, false)
+        return inflater.inflate(R.layout.fragment_to_do_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -24,7 +24,7 @@ class ToDoListFragment : Fragment() {
 
         val fragmentAdapter =
             MyPagerAdapter(
-                parentFragmentManager,
+                childFragmentManager,
                 2
             )
         viewpager.adapter = fragmentAdapter

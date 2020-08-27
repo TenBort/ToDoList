@@ -13,13 +13,6 @@ class SecondTabFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second_tab, container, false)
     }
-    /*override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        start_button.setOnClickListener {
-            findNavController().navigate(R.id.action_toDoListFragment_to_startFragment)
-        }
-    }*/
 }
