@@ -1,9 +1,9 @@
-package com.example.todolist.Adapters
+package com.example.todolist.adapters
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.todolist.Fragments.FirstTabFragment
-import com.example.todolist.Fragments.SecondTabFragment
+import com.example.todolist.fragments.FirstTabFragment
+import com.example.todolist.fragments.SecondTabFragment
 
 val fragmentTitleList = mutableListOf("To do list", "Done list")
 

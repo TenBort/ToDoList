@@ -7,4 +7,32 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <array name="color_list">
+        <item name="bright_pink" type="color">#FF007F</item>
+        <item name="red" type="color">#FF0000</item>
+        <item name="orange" type="color">#FF7F00</item>
+        <item name="yellow" type="color">#FFFF00</item>
+        <item name="chartreuse" type="color">#7FFF00</item>
+        <item name="green" type="color">#00FF00</item>
+        <item name="spring_green" type="color">#00FF7F</item>
+        <item name="cyan" type="color">#00FFFF</item>
+        <item name="azure" type="color">#007FFF</item>
+        <item name="blue" type="color">#0000FF</item>
+        <item name="violet" type="color">#7F00FF</item>
+        <item name="magenta" type="color">#FF00FF</item>
+        <item name="bright_pink1" type="color">#FF007F</item>
+        <item name="red1" type="color">#FF0000</item>
+        <item name="orange1" type="color">#FF7F00</item>
+        <item name="yellow1" type="color">#FFFF00</item>
+        <item name="chartreuse1" type="color">#7FFF00</item>
+        <item name="green1" type="color">#00FF00</item>
+        <item name="spring_green1" type="color">#00FF7F</item>
+        <item name="cyan1" type="color">#00FFFF</item>
+        <item name="azure1" type="color">#007FFF</item>
+        <item name="blue1" type="color">#0000FF</item>
+        <item name="violet1" type="color">#7F00FF</item>
+        <item name="magenta1" type="color">#FF00FF</item>
+    </array>
+
+
 </resources>
