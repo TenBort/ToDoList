@@ -6,9 +6,10 @@ import androidx.fragment.app.FragmentPagerAdapter
 import com.example.todolist.Fragments.FirstTabFragment
 import com.example.todolist.Fragments.SecondTabFragment
 
-val fragmentTitleList = mutableListOf("To do list", "Done list")
+
 
 class MyPagerAdapter(fm: FragmentManager, val fragmentCount: Int) : FragmentPagerAdapter(fm) {
+    val fragmentTitleList = mutableListOf("To do list", "Done list")
     override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> FirstTabFragment()
