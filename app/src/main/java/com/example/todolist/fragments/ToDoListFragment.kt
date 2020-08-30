@@ -22,6 +22,8 @@ class ToDoListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
+
         val fragmentAdapter =
             MyPagerAdapter(
                 childFragmentManager,
@@ -29,5 +31,9 @@ class ToDoListFragment : Fragment() {
             )
         viewpager.adapter = fragmentAdapter
         tabs.setupWithViewPager(viewpager)
+
+        tabs.getTabAt(0)?.setIcon(R.drawable.ic_baseline_sentiment_satisfied_24)
+        tabs.getTabAt(1)?.setIcon(R.drawable.ic_baseline_sentiment_very_satisfied_24)
+
     }
 }
