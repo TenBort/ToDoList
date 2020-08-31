@@ -74,7 +74,7 @@
                 android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/ic_baseline_favorite_border_24" />
+                app:srcCompat="@drawable/ic_baseline_grade_24" />
 
             <ImageView
                 android:id="@+id/imageView4"

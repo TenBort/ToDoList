@@ -8,20 +8,20 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.R
-import com.example.todolist.model.DataItem
+import com.example.todolist.model.Task
 import com.squareup.picasso.Picasso
 
 
 class DoneRecyclerAdapter() :
     RecyclerView.Adapter<DoneRecyclerAdapter.MyViewHolder>() {
     var colors = mutableListOf<Int>()
-    val list:List<DataItem> = listOf<DataItem>(
-        DataItem(
+    val list:List<Task> = listOf<Task>(
+        Task(
             "27.08.2020",
             "StartTest",
             "Hoh man","https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
         ),
-        DataItem(
+        Task(
             "07.12.1998",
             "Shit its Jason BORNing",
             "yyyyyyyyyyyyyyyyyyyyyyy","https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"

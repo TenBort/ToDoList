@@ -1,16 +1,13 @@
 package com.example.todolist.adapters
 
-import android.icu.text.CaseMap
-import android.service.quicksettings.Tile
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.core.view.get
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todolist.model.DataItem
+import com.example.todolist.model.Task
 import com.example.todolist.R
 import com.squareup.picasso.Picasso
 
@@ -19,25 +16,22 @@ class ToDoRecyclerAdapter() :
     RecyclerView.Adapter<ToDoRecyclerAdapter.MyViewHolder>() {
 
     var colors = mutableListOf<Int>()
-    val list: List<DataItem> = listOf<DataItem>(
-        DataItem(
+    val list: List<Task> = listOf<Task>(
+        Task(
             "27.08.2020",
             "StartTest",
-            "Hoh man",
-            "https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
+            "Hoh man"
 
         ),
-        DataItem(
+        Task(
             "07.12.1998",
             "Shit its Jason BORNing",
-            "yyyyyyyyyyyyyyyyyyyyyyy",
-            "https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
+            "yyyyyyyyyyyyyyyyyyyyyyy"
         ),
-        DataItem(
+        Task(
             "07.12.1998",
             "Shit its Jason BORNing",
-            "yyyyyyyyyyyyyyyyyyyyyyy",
-            "https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
+            "yyyyyyyyyyyyyyyyyyyyyyy"
         )
     )
 
@@ -62,7 +56,7 @@ class ToDoRecyclerAdapter() :
 
         holder.textContainer.text = list[position].date
         holder.textContainer2.text = list[position].name
-        holder.picassoHelper(list[position].img)
+
     }
 
     override fun getItemCount() = list.size
@@ -73,15 +67,6 @@ class ToDoRecyclerAdapter() :
         var textContainer = view.findViewById<TextView>(R.id.textViewItem)
         var textContainer2 = view.findViewById<TextView>(R.id.textViewItem2)
         var cardView = view.findViewById<CardView>(R.id.card_view)
-        var img = view.findViewById<ImageView>(R.id.imageView)
-
-
-        fun picassoHelper(url: String) {
-
-            Picasso.with(itemView.context).load(url).into(img)
-
-
-        }
     }
 }
 
