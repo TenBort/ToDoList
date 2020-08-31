@@ -14,26 +14,8 @@ import com.squareup.picasso.Picasso
 
 class ToDoRecyclerAdapter() :
     RecyclerView.Adapter<ToDoRecyclerAdapter.MyViewHolder>() {
-
     var colors = mutableListOf<Int>()
-    val list: List<Task> = listOf<Task>(
-        Task(
-            "27.08.2020",
-            "StartTest",
-            "Hoh man"
-
-        ),
-        Task(
-            "07.12.1998",
-            "Shit its Jason BORNing",
-            "yyyyyyyyyyyyyyyyyyyyyyy"
-        ),
-        Task(
-            "07.12.1998",
-            "Shit its Jason BORNing",
-            "yyyyyyyyyyyyyyyyyyyyyyy"
-        )
-    )
+    var list: List<Task> = listOf()
 
 
     override fun onCreateViewHolder(
@@ -57,12 +39,13 @@ class ToDoRecyclerAdapter() :
         holder.textContainer.text = list[position].date
         holder.textContainer2.text = list[position].name
 
+
     }
 
     override fun getItemCount() = list.size
 
 
-    inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         var textContainer = view.findViewById<TextView>(R.id.textViewItem)
         var textContainer2 = view.findViewById<TextView>(R.id.textViewItem2)

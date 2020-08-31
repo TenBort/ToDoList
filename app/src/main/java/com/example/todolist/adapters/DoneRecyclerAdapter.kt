@@ -15,18 +15,7 @@ import com.squareup.picasso.Picasso
 class DoneRecyclerAdapter() :
     RecyclerView.Adapter<DoneRecyclerAdapter.MyViewHolder>() {
     var colors = mutableListOf<Int>()
-    val list:List<Task> = listOf<Task>(
-        Task(
-            "27.08.2020",
-            "StartTest",
-            "Hoh man","https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
-        ),
-        Task(
-            "07.12.1998",
-            "Shit its Jason BORNing",
-            "yyyyyyyyyyyyyyyyyyyyyyy","https://i.pinimg.com/originals/87/af/ef/87afef76100d0b704ca5b6039468a736.jpg"
-        )
-    )
+    val list: List<Task> = listOf()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -42,7 +31,7 @@ class DoneRecyclerAdapter() :
         holder.colorChange()
         holder.textContainer.text = list[position].date
         holder.textContainer2.text = list[position].name
-        holder.picassoHelper(list[position].img)
+
     }
 
     override fun getItemCount() = list.size
@@ -53,17 +42,10 @@ class DoneRecyclerAdapter() :
         var textContainer = view.findViewById<TextView>(R.id.textViewItem)
         var textContainer2 = view.findViewById<TextView>(R.id.textViewItem2)
         var cardView = view.findViewById<CardView>(R.id.card_view)
-        var img = view.findViewById<ImageView>(R.id.imageView)
 
-        fun colorChange (){
+
+        fun colorChange() {
             cardView.setBackgroundColor(colors.random())
-        }
-
-        fun picassoHelper(url: String) {
-
-            Picasso.with(itemView.context).load(url).into(img)
-
-
         }
     }
 }

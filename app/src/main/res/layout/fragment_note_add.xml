@@ -31,7 +31,6 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint=" Note description"
-            android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="@+id/editTextNameItem"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/editTextNameItem"
