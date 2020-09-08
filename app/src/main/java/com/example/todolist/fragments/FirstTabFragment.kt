@@ -51,6 +51,5 @@ class FirstTabFragment : Fragment() {
             adapterRecycler.list = it
             adapterRecycler.notifyDataSetChanged()
         })
-
     }
 }
