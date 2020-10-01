@@ -21,6 +21,7 @@ class ToDoRecyclerAdapter() :
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
+
     ): ToDoRecyclerAdapter.MyViewHolder {
 
         val itemView = LayoutInflater.from(parent.context)

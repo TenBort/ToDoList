@@ -1,26 +1,32 @@
 package com.example.todolist
 
+import android.app.Application
+import android.content.Context
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import com.example.todolist.adapters.ToDoRecyclerAdapter
 import com.example.todolist.model.Task
+import com.example.todolist.repo.TaskRepository
+
+class BaseViewModel(context: Context) : AndroidViewModel(Application()) {
+    private val mRepository = TaskRepository(context)
+    val allWords = MutableLiveData<List<Task>>()
 
 
-class BaseViewModel : ViewModel(){
-//    val adaterRecycler = ToDoRecyclerAdapter()
-//
-//    val list = MutableLiveData<List<Task>>()
-//
-//    fun saveTask (task: Task){
-//        //adaterRecycler.list = list.value!!
-//        val items = mutableListOf<Task>()
-//        items.add(task)
-//
-//        list.value = items
-//    }
+    fun getTask() {
+        allWords.value
+        mRepository.getallTasks()
+    }
 
-    val list = MutableLiveData<MutableList<Task>>(mutableListOf())
+    fun updateTask(task: Task) {
+        mRepository.saveTask(task = task)
+    }
 
-    fun saveTask(task: Task) = list.value!!.add(task)
+    fun deleteTask(task: Task) {
+        mRepository.deleteTask(task = task)
+    }
 
+    fun saveTask(task: Task){
+        allWords.value
+        mRepository.saveTask(task = task)
+    }
 }

@@ -1,6 +1,13 @@
 package com.example.todolist.model
 
-import java.io.FileDescriptor
-import java.util.*
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
-data class Task (val date:String, val name:String, val description:String)
+@Entity(tableName = "ToDoListDB")
+data class Task(
+    @PrimaryKey(autoGenerate = true)
+    var id:Int = 0,
+    var date: String = "",
+    var name: String = "",
+    var description: String = "")
+

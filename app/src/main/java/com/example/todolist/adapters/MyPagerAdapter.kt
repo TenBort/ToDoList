@@ -13,10 +13,6 @@ class MyPagerAdapter(fm: FragmentManager, val fragmentCount:Int) : FragmentPager
             0 -> FirstTabFragment()
             1 -> SecondTabFragment()
             else -> SecondTabFragment()
-
-
-
-
         }
     }
 
