@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.fragment_second_tab.*
 
 class SecondTabFragment : Fragment() {
 
-    val adapterRecycler = DoneRecyclerAdapter()
-    val  colorsBuble = adapterRecycler.colors
+    private val adapterRecycler = DoneRecyclerAdapter()
+    private val colorsBuble = adapterRecycler.colors
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,14 +23,15 @@ class SecondTabFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_second_tab, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
 
         RecyclerViewSecond.layoutManager = LinearLayoutManager(context)
         RecyclerViewSecond.adapter = adapterRecycler
 
-        val colorsInResours = resources.getIntArray(R.array.color_list)
-        colorsInResours.forEach{
+        val colorsInResourse = resources.getIntArray(R.array.color_list)
+        colorsInResourse.forEach {
             colorsBuble.add(it)
         }
     }

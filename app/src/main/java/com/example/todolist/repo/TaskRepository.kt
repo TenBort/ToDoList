@@ -1,51 +1,30 @@
 package com.example.todolist.repo
 
-import android.content.Context
-import androidx.lifecycle.LiveData
+
 import com.example.todolist.model.Task
 import com.example.todolist.room.ToDoListDao
-import com.example.todolist.room.ToDoListDataBase
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
+import javax.inject.Singleton
+import kotlin.coroutines.CoroutineContext
 
+@Singleton
+class TaskRepository @Inject constructor(private val toDoListDao : ToDoListDao):
+CoroutineScope {
 
-class TaskRepository(context: Context) {
+    private val tasks = toDoListDao.getTask()
 
-    private val taskDao: ToDoListDao
-    private var allTasks: LiveData<List<Task>>
+    fun getTaskList() = tasks
 
-    init {
-        val database = ToDoListDataBase.getTaskInstanse(context)
-        taskDao = database!!.taskDao()
-        allTasks = taskDao.getTask()
+    suspend fun setTasks (task: Task){
+        toDoListDao.setTask(task)
     }
-      fun saveTask(task: Task) = runBlocking{
-          this.launch(Dispatchers.IO){
-              taskDao.saveTask(task)
-          }
-
-      }
-
-    fun updateTask(task: Task) = runBlocking{
-        this.launch(Dispatchers.IO){
-            taskDao.updateTask(task)
-        }
-
-    }
-    fun deleteTask(task: Task) = runBlocking{
-        this.launch(Dispatchers.IO){
-            taskDao.deleteTask(task)
-        }
-
+    fun deleteTask(task: Task){
+        toDoListDao.deleteTask(task)
     }
 
-
-    fun getallTasks(): LiveData<List<Task>>{
-        allTasks.value
-        return allTasks
-    }
-
-
+    override val coroutineContext: CoroutineContext
+        get() = Dispatchers.Default
 
 }

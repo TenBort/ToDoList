@@ -16,7 +16,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +59,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/deleteView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -68,7 +69,7 @@
                 app:srcCompat="@drawable/ic_baseline_close_24" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/specialView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -80,7 +81,7 @@
                 app:srcCompat="@drawable/ic_baseline_grade_24" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/doneView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"

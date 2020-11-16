@@ -2,8 +2,8 @@ package com.example.todolist.room
 
 import android.content.Context
 import androidx.room.Database
+import androidx.room.Room
 
-import androidx.room.Room.databaseBuilder
 import androidx.room.RoomDatabase
 import com.example.todolist.model.Task
 
@@ -16,14 +16,16 @@ abstract class ToDoListDataBase : RoomDatabase() {
     companion object {
         var INSTANCE: ToDoListDataBase? = null
 
-        fun getTaskInstanse(context: Context): ToDoListDataBase? {
+        fun getTaskInstance(context: Context): ToDoListDataBase? {
             if (INSTANCE == null) {
                 synchronized(ToDoListDataBase::class.java) {
-                    INSTANCE = databaseBuilder(
+                    INSTANCE = Room.databaseBuilder(
                         context,
                         ToDoListDataBase::class.java,
                         "Todo-database"
-                    ).allowMainThreadQueries().build()
+                    )
+                        .allowMainThreadQueries()
+                        .build()
 
                 }
             }

@@ -7,19 +7,14 @@ import com.example.todolist.model.Task
 
 @Dao
 interface ToDoListDao {
-    @Insert
-     fun saveTask(task: Task)
+    @Query("SELECT*FROM ToDoListDB")
+    fun getTask(): LiveData<List<Task>>
 
-    @Update
-     fun updateTask(task: Task)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun setTask(task: Task)
 
     @Delete
-     fun deleteTask(task: Task)
-
-    @Query("SELECT*FROM ToDoListDB")
-    fun getTask():LiveData<List<Task>>
-
-
+    fun deleteTask(task: Task)
 
 
 }

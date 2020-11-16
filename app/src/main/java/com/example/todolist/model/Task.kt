@@ -9,5 +9,6 @@ data class Task(
     var id:Int = 0,
     var date: String = "",
     var name: String = "",
-    var description: String = "")
+    var description: String = "",
+    var importent: Boolean = false)
 
